@@ -1,5 +1,6 @@
 import React , {useRef, useState} from "react";
 import './App.css';
+import  Lista  from "./components/Lista";
 
 function App() {
   const newnameRef=useRef();
@@ -14,10 +15,7 @@ function App() {
   }
     return (
       <div>
-      <h1>Lista de nombres</h1>
-      {nombres.map( (name, index)=>(
-      <p key={index}>{name}</p>
-      ))}
+      <Lista nombres={nombres}></Lista>
       <h2>Inserte un nombre</h2>
       <form onSubmit={onSaveName} >
         <input type='text' placeholder="Nuevo nombre" ref={newnameRef} />
